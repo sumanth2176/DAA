@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int sumOfDigits(int number) {
+    int sum = 0;
+    while (number != 0) {
+        sum += number % 10;
+        number /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    int number;
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+    
+    if (number < 0) {
+        number = -number;
+    }
+    
+    int result = sumOfDigits(number);
+    printf("The sum of the digits is: %d\n", result);
+    
+    return 0;
+}
